@@ -1,15 +1,10 @@
-import matplotlib.pyplot as plt
 from importer import DepthImageImporter
 import numpy as np
 from scipy import ndimage
-import math
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle
 
 
 def main():
-
-
     importer = DepthImageImporter("./data")
     images = importer.import_images()
     img = images[1][:,:,0]
@@ -40,7 +35,7 @@ def main():
 
     antipodal_points = []
     d = 0
-    while len(antipodal_points) < 200:
+    while len(antipodal_points) < 2:
         # we chose one index randomly
         i = np.random.randint(len(epsilon_x))  # select one of the coordinates that match
         antipodal_points.append([epsilon_x[i], epsilon_y[i]])
